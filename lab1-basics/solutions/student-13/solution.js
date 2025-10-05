@@ -30,28 +30,28 @@ function getReviewerNumber(number, lab) {
     // 2.1 Функция определяющая номер ревьюера для вашей группы по вашему номеру и номеру лабораторной работы
     const totalStudents = 23;
 
-    // Проверка типа данных
+    // Проверки типов/диапазона
     if (typeof number !== "number" || typeof lab !== "number") {
         return "Ошибка: неправильный тип данных";
-        }
-
-    // Проверка диапазона
+    }
+    if (!Number.isInteger(number) || !Number.isInteger(lab)) {
+        return "Ошибка: номера должны быть целыми числами";
+    }
     if (number < 1 || number > totalStudents) {
         return "Ошибка: номер студента должен быть от 1 до 23";
-        }
+    }
     if (lab < 1) {
         return "Ошибка: номер лабораторной должен быть положительным";
-        }
+    }
 
-    let reviewer = (number + lab) % totalStudents;
-        if (reviewer === 0) {
-            reviewer = 1; 
-        }
-
+    // корректная формула
+    const reviewer = ((number + lab - 1) % totalStudents) + 1;
     return reviewer;
 }
 
 console.log(chalk.bold.blue("Задание 2.1:"));
+console.log("Номер вашего ревьювера: ", getReviewerNumber(22, 1));
+console.log("Номер вашего ревьювера: ", getReviewerNumber(23, 1));
 console.log("Номер вашего ревьювера: ", getReviewerNumber(13, 1));
 console.log();
 
@@ -174,7 +174,8 @@ function calculateArea(figure, ...params) { // ... - позволяет прин
                 return "Ошибка: стороны не удовлетворяют условию существования треугольника";
             }
             const p = (x + y + z) / 2; // Полупериметр
-            return +Math.sqrt(p * (p - x) * (p - y) * (p - z)).toFixed(2);
+            const area = Math.sqrt(p * (p - x) * (p - y) * (p - z));
+            return +area.toFixed(2);
 
         default:
             return "Ошибка: неизвестная фигура. Доступны: circle, rectangle, triangle";
@@ -355,13 +356,14 @@ const taskManager = {
     
     addTask(title, priority = "medium") {
         // 5.1 Добавление задачи
-        const newtask = {
-            id: this.tasks.length + 1, // id = следующий номер
-            title,                     // название задачи
-            completed: false,          // новая задача = невыполнена
-            priority                   // приоритет
+        const maxId = this.tasks.length > 0 ? Math.max(...this.tasks.map(task => task.id)) : 0;
+        const newTask = {
+            id: maxId + 1,              // уникальный ID
+            title,                      // название задачи
+            completed: false,           // новая задача = невыполнена
+            priority                    // приоритет
         };
-        this.tasks.push(newtask);       // добавляем в список
+        this.tasks.push(newTask);       // добавляем в список
         return this.tasks;
     },
     
