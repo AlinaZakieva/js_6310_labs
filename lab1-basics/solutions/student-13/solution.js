@@ -1,5 +1,3 @@
-import chalk from "chalk";
-
 // ===== ЗАДАНИЕ 1: Базовые операции =====
 function simpleTask() {
     // 1.1 Объявите переменные разных типов (не менне 5)
@@ -21,7 +19,7 @@ function simpleTask() {
     console.log("undef:", typeof undef);
 }
 
-console.log(chalk.blue("\x1b[1mЗадание 1:\x1b[0m"));
+console.log("Задание 1:");
 simpleTask();
 console.log();
 
@@ -49,7 +47,7 @@ function getReviewerNumber(number, lab) {
     return reviewer;
 }
 
-console.log(chalk.bold.blue("Задание 2.1:"));
+console.log("Задание 2.1:");
 console.log("Номер вашего ревьювера: ", getReviewerNumber(22, 1));
 console.log("Номер вашего ревьювера: ", getReviewerNumber(23, 1));
 console.log("Номер вашего ревьювера: ", getReviewerNumber(13, 1));
@@ -75,7 +73,7 @@ function getVariant(number, variants) {
     return variant;
 }
 
-console.log(chalk.bold.blue("Задание 2.2:"));
+console.log("Задание 2.2:");
 console.log("Номер варианта: ",getVariant(13, 4));
 console.log();
 
@@ -117,7 +115,7 @@ function calculate(a, b, operation) {
     return c;
 }
 
-console.log(chalk.bold.blue("Задание 2.3:"));
+console.log("Задание 2.3:");
 console.log("5 + 3 = ", calculate(5, 3, "+")); 
 console.log("5 - 3 = ", calculate(5, 3, "-")); 
 console.log("5 * 3 = ", calculate(5, 3, "*"));  
@@ -182,7 +180,7 @@ function calculateArea(figure, ...params) { // ... - позволяет прин
     }
 }
 
-console.log(chalk.bold.blue("Задание 2.4:"));
+console.log("Задание 2.4:");
 console.log("Площадь круга: ", calculateArea("circle", 5));        
 console.log("Площадь прямоугольника: ", calculateArea("rectangle", 4, 6));  
 console.log("Площадь треугольника: ", calculateArea("triangle", 3, 4, 5));
@@ -209,7 +207,7 @@ const getRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-console.log(chalk.bold.blue("Задание 2.5:"));
+console.log("Задание 2.5:");
 console.log("Перевернутая строка: ", reverseString("asdf"));
 console.log("Случайное число между max и min: ", getRandomNumber(1, 10));
 console.log();
@@ -239,7 +237,7 @@ const book = {
     }
 };
 
-console.log(chalk.bold.blue("Задание 3.1:"));
+console.log("Задание 3.1:");
 console.log(book.getInfo());          
 console.log("Текущий статус активности: ", book.toggleAvailability());
 console.log();
@@ -269,14 +267,14 @@ const student = {
     }
 };
 
-console.log(chalk.bold.blue("Задание 3.2:"));
+console.log("Задание 3.2:");
 console.log("Средний балл студента: ", student.getAverageGrade()); 
 console.log(student.addGrade("physics", 85)); 
 console.log(student.grades);
 console.log();
 
 // ===== ЗАДАНИЕ 4: Массивы =====
-console.log(chalk.bold.blue("Задание 4:"));
+console.log("Задание 4:");
 function processArrays() {
     const numbers = [12, 45, 23, 67, 34, 89, 56, 91, 27, 14];
     const words = ["JavaScript", "программирование", "массив", "функция", "объект"];
@@ -435,10 +433,10 @@ function validateEmail(email) {
 
 /* ============ТЕСТИРОВАНИЕ============ */
 function runTests() {
-    console.log(chalk.yellow.bold("\n=== НАЧАЛО ТЕСТИРОВАНИЯ ==="));
+    console.log("=== НАЧАЛО ТЕСТИРОВАНИЯ ===");
 
     // 2.1
-    console.log(chalk.cyan("\ngetReviewerNumber"));
+    console.log("getReviewerNumber");
     console.assert(getReviewerNumber(5, 1) === 6);
     console.assert(getReviewerNumber(23, 1) === 1);
     console.assert(getReviewerNumber("5", 1) === "Ошибка: неправильный тип данных");
@@ -446,7 +444,7 @@ function runTests() {
     console.assert(getReviewerNumber(5, -1) === "Ошибка: номер лабораторной должен быть положительным");
 
     // 2.2
-    console.log(chalk.cyan("\ngetVariant"));
+    console.log("getVariant");
     console.assert(getVariant(13, 4) === 1);
     console.assert(getVariant(1, 4) === 1);
     console.assert(getVariant("13", 4) === "Ошибка: неправильный тип данных");
@@ -454,7 +452,7 @@ function runTests() {
     console.assert(getVariant(5, 0) === "Ошибка: количество вариантов должно быть больше 0");
 
     // 2.3
-    console.log(chalk.cyan("\ncalculate"));
+    console.log("calculate");
     console.assert(calculate(5, 3, "+") === 8);
     console.assert(calculate(5, 3, "-") === 2);
     console.assert(calculate(5, 3, "*") === 15);
@@ -464,7 +462,7 @@ function runTests() {
     console.assert(calculate("5", 3, "+") === "Ошибка: неверный тип данных");
 
     // 2.4
-    console.log(chalk.cyan("\ncalculateArea"));
+    console.log("calculateArea");
     console.assert(calculateArea("circle", 5) === 78.54);
     console.assert(calculateArea("rectangle", 4, 6) === 24);
     console.assert(calculateArea("triangle", 3, 4, 5) === 6);
@@ -473,7 +471,7 @@ function runTests() {
     console.assert(calculateArea("hexagon", 3) === "Ошибка: неизвестная фигура. Доступны: circle, rectangle, triangle");
 
     // 2.5
-    console.log(chalk.cyan("\nreverseString / getRandomNumber"));
+    console.log("reverseString / getRandomNumber");
     console.assert(reverseString("abc") === "cba");
     console.assert(reverseString(123) === "Ошибка: неправильный тип данных");
     const rnd = getRandomNumber(1, 5);
@@ -482,7 +480,7 @@ function runTests() {
     console.assert(getRandomNumber(10, 5) === "Ошибка: min не может быть больше max");
 
     // 3
-    console.log(chalk.cyan("\nbook / student"));
+    console.log("book / student");
     console.assert(book.getInfo().includes("Гарри Поттер и Философский камень"));
     const statusBefore = book.available;
     book.toggleAvailability();
@@ -490,7 +488,7 @@ function runTests() {
     console.assert(student.addGrade("english", 88).includes("english"));
 
     // 5
-    console.log(chalk.cyan("\ntaskManager"));
+    console.log("taskManager");
     const prevCount = taskManager.tasks.length;
     taskManager.addTask("Новая задача", "low");
     console.assert(taskManager.tasks.length === prevCount + 1);
@@ -501,14 +499,14 @@ function runTests() {
     console.assert(typeof stats.total === "number" && typeof stats.completionRate === "number");
 
     // 6
-    console.log(chalk.cyan("\nvalidateEmail"));
+    console.log("validateEmail");
     console.assert(validateEmail("test@example.com") === true);
     console.assert(validateEmail("user.name+tag@gmail.com") === true);
     console.assert(validateEmail("bademail.com") === false);
     console.assert(validateEmail("x@y") === false);
     console.assert(validateEmail("user@domain..com") === false);
 
-    console.log(chalk.bold.yellow("\n=== ✅ ВСЕ ТЕСТЫ ВЫПОЛНЕНЫ ===\n"));
+    console.log("=== ✅ ВСЕ ТЕСТЫ ВЫПОЛНЕНЫ ===");
 }
 // Запуск тестов
 runTests();
