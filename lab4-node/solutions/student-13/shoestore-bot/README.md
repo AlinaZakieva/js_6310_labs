@@ -181,3 +181,18 @@ shoestore-bot/
   jest.config.json
   package.json
   .gitignore
+
+Установка и запуск
+	1.	Перейти в папку проекта: cd lab4-node/solutions/student-13/shoestore-bot
+    2.	Установить зависимости: npm install
+    3.	Создать файл .env на основе примера: cp .env.example .env
+    В файле .env указать токен бота (без кавычек): TELEGRAM_BOT_TOKEN=ВАШ_ТОКЕН_ОТ_BOTFATHER
+    4.	Запустить проверку кода линтером: npm run lint
+    5.	Запустить тесты с покрытием: npm run test:coverage
+	6.	Запустить бота: npm start
+    После запуска в консоли должно появиться сообщение: ShoeStore bot запущен...
+
+Скриншоты:
+    1. Команда /start: <shoestore-bot/images/start.png>
+    2. Команда /catalog: <shoestore-bot/images/catalog.png>
+    3. Команда /size_help: <shoestore-bot/images/size_help.png>
