@@ -4,3 +4,12 @@ package-lock.json
 coverage
 # local backup
 shoestore-react-bag/
+
+# shoestore-react local artifacts (do not commit)
+shoestore-react/_backup_web_template/
+shoestore-react/.npmrc
+shoestore-react/docs/lab6-task.md
+shoestore-react/docs/lab6-architecture-task.md
+shoestore-react/**/node_modules/
+shoestore-react/**/dist/
+shoestore-react/**/coverage/
