@@ -1,0 +1,20 @@
+.product-catalog {
+  width: 100%;
+}
+
+.product-catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Пустой каталог */
+
+.product-catalog--empty {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+  border: 1px dashed #e5e7eb;
+  color: #6b7280;
+  background-color: rgba(255, 255, 255, 0.8);
+}

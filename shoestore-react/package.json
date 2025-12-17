@@ -1,0 +1,12 @@
+{
+  "name": "shoestore-react",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "lint": "echo \"Use project-specific lint scripts\" && exit 0"
+  }
+}

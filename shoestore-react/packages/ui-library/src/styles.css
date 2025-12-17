@@ -1,0 +1,4 @@
+@import "./Card/Card.css";
+@import "./ProductCard/ProductCard.css";
+@import "./ProductCatalog/ProductCatalog.css";
+/* Button.module.css не импортим тут — он и так подключается через компонент */
