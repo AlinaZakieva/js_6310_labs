@@ -6,4 +6,4 @@ https://github.com/AlinaZakieva/shoestore-react
 
 ## Ссылка на pull request по лабораторной работе 6
 
-https://github.com/AlinaZakieva/shoestore-react/pull/1
+https://github.com/AlinaZakieva/shoestore-react-js/pull/3
